@@ -2,7 +2,7 @@
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-# ---------------------------------------------------------------------- #
+# -----------------------ATUALIZAÇÃO------------------------------------ #
 echo -e "${RED}Começando Atualização${NC}"
 
 # Removendo travas possíveis do apt
@@ -21,8 +21,8 @@ sudo snap refresh
 
 echo -e "${RED}Atualização finalizada!${NC}"
 
-# Fim da atualização
-# ---------------------------------------------------------------------- #
+# --------------------FIM DA ATUALIZAÇÃO------------------------------ #
+# --------------------------SYSTEM------------------------------------ #
 
 # Instalação grub-customizer
 software='Grub-customizer'
@@ -42,38 +42,47 @@ else
 fi
 # ---------------------------------------------------------------------- #
 
+# ------------------------PACOTES GNOME--------------------------------- #
+
+software='Pacotes Gnome'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
 # Instalação gnome-tweaks
-software='Gnome-tweaks'
-echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
-read option
-if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
-then
-	echo -e "${RED}Instalando ${software}${NC}"
-# Adicionando repositório
-	echo "Adicionando repositório"
-	sudo add-apt-repository universe
-# Instalando gnome-tweaks
-	sudo apt install gnome-tweaks -y
-	echo -e "${RED}${software} instalado${NC}"
-else
-	echo -e "${RED}${software} NÃO instalado${NC}"
-fi
-# ---------------------------------------------------------------------- #
+	software='Gnome-tweaks'
+	echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+	read option
+	if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+	then
+		echo -e "${RED}Instalando ${software}${NC}"
+	# Adicionando repositório
+		echo "Adicionando repositório"
+		sudo add-apt-repository universe
+	# Instalando gnome-tweaks
+		sudo apt install gnome-tweaks -y
+		echo -e "${RED}${software} instalado${NC}"
+	else
+		echo -e "${RED}${software} NÃO instalado${NC}"
+	fi
+	# ---------------------------------------------------------------------- #
 
-# Instalação gnome-shell-extension-manager
-software='Gnome-shell-extension-manager'
-echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
-read option
-if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
-then
-	echo -e "${RED}Instalando ${software}${NC}"
-	sudo apt install gnome-shell-extension-manager -y
-	echo -e "${RED}${software} instalado${NC}"
-else
-	echo -e "${RED}${software} NÃO instalado${NC}"
+	# Instalação gnome-shell-extension-manager
+	software='Gnome-shell-extension-manager'
+	echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+	read option
+	if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+	then
+		echo -e "${RED}Instalando ${software}${NC}"
+		sudo apt install gnome-shell-extension-manager -y
+		echo -e "${RED}${software} instalado${NC}"
+	else
+		echo -e "${RED}${software} NÃO instalado${NC}"
+	fi
 fi
-# ---------------------------------------------------------------------- #
-
+# --------------------FIM DOS PACOTES GNOME----------------------------- #
+# ------------------------SOFTWARE SNAPS-------------------------------- #
+echo -e "Instalando ${RED}[SOFTWARE SNAPS]${NC}..."
 # Instalação steam
 software='Steam'
 echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
@@ -116,3 +125,67 @@ then
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
+
+# ---------------------------------------------------------------------- #
+
+# Instalação gimp
+software='GIMP'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo snap install gimp
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# -----------------------------DEV PACKAGE----------------------------- #
+echo -e "Instalando ${RED}[DEV PACKAGE]${NC}..."
+echo -e "Instalando ${RED}[GIT]${NC}..."
+sudo apt install git
+
+
+# Instalação vs-code
+software='VS Code'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo snap install code --classic
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+
+# Instalação vs-code
+software='VS Code'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo snap install code --classic
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+
+# Instalação github-desktop
+software='Github-desktop'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+	sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+	sudo apt update && sudo apt install github-desktop
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
