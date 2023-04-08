@@ -140,11 +140,75 @@ then
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
+
+# ---------------------------------------------------------------------- #
+
+# Instalação vlc
+software='VLC'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo snap install gimp
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+
+# ---------------------------------------------------------------------- #
+
+# Instalação opera
+software='Opera'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo snap install opera
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+
+# ---------------------------------------------------------------------- #
+
+# Instalação brave
+software='Brave'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo snap install brave
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# --------------------FIM DOS SOFTWARE SNAPS--------------------------- #
+# ------------------------SOFTWARE DIVERSOS---------------------------- #
+echo -e "Instalando ${RED}[SOFTWARE DIVERSOS]${NC}..."
+
+# Instalação chrome
+software='Chrome'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	chmod +x google-chrome-stable_current_amd64.deb
+	sudo dpkg -i google-chrome-stable_current_amd64.deb
+	rm google-chrome-stable_current_amd64.deb
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# --------------------FIM DOS SOFTWARE DIVERSOS------------------------- #
 # -----------------------------DEV PACKAGE----------------------------- #
 echo -e "Instalando ${RED}[DEV PACKAGE]${NC}..."
 echo -e "Instalando ${RED}[GIT]${NC}..."
 sudo apt install git
-
 
 # Instalação vs-code
 software='VS Code'
