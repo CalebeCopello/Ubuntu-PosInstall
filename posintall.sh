@@ -7,8 +7,7 @@ NC='\033[0m' # No Color
 echo -e "${RED}Começando Atualização${NC}"
 
 # Removendo travas possíveis do apt
-sudo rm /var/lib/dpkg/lock-frontend
-sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock
 
 # Adicionar/Confirmar arquitetura 32bits
 sudo dpkg --add-architecture i386
@@ -16,7 +15,7 @@ sudo dpkg --add-architecture i386
 # Atualizando o repositório e dando upgrade
 sudo apt update -y
 sudo apt upgrade -y
-
+ 
 # Atualizando pacotes Snap
 sudo snap refresh
 
@@ -24,6 +23,9 @@ echo -e "${RED}Atualização finalizada!${NC}"
 
 # --------------------FIM DA ATUALIZAÇÃO------------------------------ #
 # --------------------------SYSTEM------------------------------------ #
+# Instalação pacotes extras
+
+sudo apt install ubuntu-restricted-extras
 
 # Instalação grub-customizer
 software='Grub-customizer'
