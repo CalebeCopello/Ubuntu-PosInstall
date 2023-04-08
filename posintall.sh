@@ -25,7 +25,9 @@ echo -e "${RED}Atualização finalizada!${NC}"
 # --------------------------SYSTEM------------------------------------ #
 # Instalação pacotes extras
 
-sudo apt install ubuntu-restricted-extras
+sudo apt install ubuntu-restricted-extras -y
+sudo apt install neofetch -y
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 # Instalação grub-customizer
 software='Grub-customizer'
