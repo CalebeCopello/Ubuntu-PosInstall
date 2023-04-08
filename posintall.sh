@@ -168,7 +168,7 @@ read option
 if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
 then
 	echo -e "${RED}Instalando ${software}${NC}"
-	sudo snap install gimp
+	sudo snap install vlc
 	echo -e "${RED}${software} instalado${NC}"
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
