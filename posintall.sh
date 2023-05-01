@@ -27,7 +27,6 @@ echo -e "${RED}Atualização finalizada!${NC}"
 
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install neofetch -y
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 # Instalação grub-customizer
 software='Grub-customizer'
@@ -169,6 +168,21 @@ if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option =
 then
 	echo -e "${RED}Instalando ${software}${NC}"
 	sudo snap install vlc
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+
+# ---------------------------------------------------------------------- #
+
+# Instalação libreoffice
+software='Libre Office'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo snap install libreoffice
 	echo -e "${RED}${software} instalado${NC}"
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
