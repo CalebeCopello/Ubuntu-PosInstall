@@ -22,7 +22,7 @@ sudo snap refresh
 echo -e "${RED}Atualização finalizada!${NC}"
 
 # --------------------FIM DA ATUALIZAÇÃO------------------------------ #
-# --------------------------SYSTEM------------------------------------ #
+# --------------------------SYSTEM/APT------------------------------------ #
 # Instalação pacotes extras
 
 sudo apt install ubuntu-restricted-extras -y
@@ -88,45 +88,7 @@ else
 fi
 # ---------------------------------------------------------------------- #
 
-# ------------------------PACOTES GNOME--------------------------------- #
 
-software='Pacotes Gnome'
-echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
-read option
-if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
-then
-# Instalação gnome-tweaks
-	software='Gnome-tweaks'
-	echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
-	read option
-	if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
-	then
-		echo -e "${RED}Instalando ${software}${NC}"
-	# Adicionando repositório
-		echo "Adicionando repositório"
-		sudo add-apt-repository universe
-	# Instalando gnome-tweaks
-		sudo apt install gnome-tweaks -y
-		echo -e "${RED}${software} instalado${NC}"
-	else
-		echo -e "${RED}${software} NÃO instalado${NC}"
-	fi
-	# ---------------------------------------------------------------------- #
-
-	# Instalação gnome-shell-extension-manager
-	software='Gnome-shell-extension-manager'
-	echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
-	read option
-	if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
-	then
-		echo -e "${RED}Instalando ${software}${NC}"
-		sudo apt install gnome-shell-extension-manager -y
-		echo -e "${RED}${software} instalado${NC}"
-	else
-		echo -e "${RED}${software} NÃO instalado${NC}"
-	fi
-fi
-# --------------------FIM DOS PACOTES GNOME----------------------------- #
 # ------------------------SOFTWARE SNAPS-------------------------------- #
 echo -e "Instalando ${RED}[SOFTWARE SNAPS]${NC}..."
 # Instalação steam
