@@ -89,8 +89,8 @@ fi
 # ---------------------------------------------------------------------- #
 
 
-# ------------------------SOFTWARE SNAPS-------------------------------- #
-echo -e "Instalando ${RED}[SOFTWARE SNAPS]${NC}..."
+# ------------------------SOFTWARES/SNAPS-------------------------------- #
+echo -e "Instalando ${RED}[SOFTWARES/SNAPS]${NC}..."
 # Instalação steam
 software='Steam'
 echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
@@ -101,6 +101,20 @@ then
 	sudo apt install steam-installer -y
 	sudo apt install steam-devices -y
 	sudo apt install steam:i386 -y
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+
+# Instalação libreoffice
+software='LibreOffice'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	snap install libreoffice
 	echo -e "${RED}${software} instalado${NC}"
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
