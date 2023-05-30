@@ -84,10 +84,18 @@ read option
 if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
 then
 	echo -e "${RED}Instalando ${software}${NC}"
-	sudo apt install xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data xscreensaver-data-extra
- -y
+	sudo apt install xscreensaver xscreensaver-gl xscreensaver-gl-extra xscreensaver-data xscreensaver-data-extra -y
 	echo -e "${RED}${software} instalado${NC}"
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
 # ---------------------------------------------------------------------- #
+# --------------------------FLATPAK------------------------------------ #
+sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak --version
+
+flatpak install flathub com.visualstudio.code
+flatpak install flathub com.valvesoftware.Steam
+flatpak install flathub com.discordapp.Discord
+flatpak install flathub io.github.shiftey.Desktop
