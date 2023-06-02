@@ -95,7 +95,95 @@ sudo apt install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --version
 
-flatpak install flathub com.visualstudio.code
-flatpak install flathub com.valvesoftware.Steam
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub io.github.shiftey.Desktop
+# ---------------------------------------------------------------------- #
+# Instalação vs-code
+software='VS Code'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub com.visualstudio.code
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Github Desktop
+software='Github Desktop'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub io.github.shiftey.Desktop
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Steam
+software='Steam'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub com.valvesoftware.Steam
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Discord
+software='Discord'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub com.discordapp.Discord
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Chrome
+software='Chrome'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub com.google.Chrome
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Opera
+software='Opera'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub com.opera.Opera
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Brave
+software='Brave'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub com.brave.Browser
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
