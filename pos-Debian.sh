@@ -142,6 +142,7 @@ read option
 if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
 then
 	echo -e "${RED}Instalando ${software}${NC}"
+	sudo apt install steam-devices -y
 	flatpak install flathub com.valvesoftware.Steam
 	echo -e "${RED}${software} instalado${NC}"
 else
