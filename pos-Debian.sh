@@ -90,6 +90,19 @@ else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
 # ---------------------------------------------------------------------- #
+# Instalação Steam
+software='Steam'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo apt install steam-devices -y
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
 # Instalação Restricted-extras packages
 software='Restricted-extras packages'
 echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
@@ -130,20 +143,6 @@ if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option =
 then
 	echo -e "${RED}Instalando ${software}${NC}"
 	flatpak install flathub io.github.shiftey.Desktop
-	echo -e "${RED}${software} instalado${NC}"
-else
-	echo -e "${RED}${software} NÃO instalado${NC}"
-fi
-# ---------------------------------------------------------------------- #
-# Instalação Steam
-software='Steam'
-echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
-read option
-if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
-then
-	echo -e "${RED}Instalando ${software}${NC}"
-	sudo apt install steam-devices -y
-	flatpak install flathub com.valvesoftware.Steam
 	echo -e "${RED}${software} instalado${NC}"
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
