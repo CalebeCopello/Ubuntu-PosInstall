@@ -239,3 +239,16 @@ else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
 # ---------------------------------------------------------------------- #
+# Instalação Calculator
+software='Calculator'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub org.gnome.Calculator
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
