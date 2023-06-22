@@ -172,7 +172,7 @@ then
 	echo -e "${RED}${software} instalado${NC}"
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
-fiflatpak install flathub com.obsproject.Studio
+fi
 # ---------------------------------------------------------------------- #
 # Instalação Chrome
 software='Chrome'
