@@ -293,16 +293,3 @@ else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
 # ---------------------------------------------------------------------- #
-# Instalação Bookworm
-software='Bookworm'
-echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
-read option
-if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
-then
-	echo -e "${RED}Instalando ${software}${NC}"
-	flatpak install flathub com.github.babluboy.bookworm
-	echo -e "${RED}${software} instalado${NC}"
-else
-	echo -e "${RED}${software} NÃO instalado${NC}"
-fi
-# ---------------------------------------------------------------------- #
