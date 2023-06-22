@@ -48,7 +48,6 @@ else
 fi
 # ---------------------------------------------------------------------- #
 
-
 # Instalação gnome-disk-utility
 software='Disks'
 echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
@@ -61,6 +60,22 @@ then
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
+
+# ---------------------------------------------------------------------- #
+
+# Instalação Gparted
+software='Gparted'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo apt install gparted -y
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+
 # ---------------------------------------------------------------------- #
 
 # Instalação hollywood
@@ -260,6 +275,32 @@ if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option =
 then
 	echo -e "${RED}Instalando ${software}${NC}"
 	flatpak install flathub com.obsproject.Studio
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Gimp
+software='Gimp'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub org.gimp.GIMP
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação Bookworm
+software='Bookworm'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	flatpak install flathub com.github.babluboy.bookworm
 	echo -e "${RED}${software} instalado${NC}"
 else
 	echo -e "${RED}${software} NÃO instalado${NC}"
