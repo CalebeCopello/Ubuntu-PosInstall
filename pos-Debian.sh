@@ -118,6 +118,32 @@ else
 	echo -e "${RED}${software} NÃO instalado${NC}"
 fi
 # ---------------------------------------------------------------------- #
+# Instalação Btop
+software='Btop'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo apt install btop -y
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
+# Instalação moc
+software='Console audio player & Cava'
+echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
+read option
+if [ $option == "Y" ] || [ $option == "y" ] || [ $option == "S" ] || [ $option == "s" ]
+then
+	echo -e "${RED}Instalando ${software}${NC}"
+	sudo apt install moc moc-ffmpeg-plugin cava -y
+	echo -e "${RED}${software} instalado${NC}"
+else
+	echo -e "${RED}${software} NÃO instalado${NC}"
+fi
+# ---------------------------------------------------------------------- #
 # Instalação Restricted-extras packages
 software='Restricted-extras packages'
 echo -e "Deseja instalar ${RED}[${software}]${NC}? s/y: "
